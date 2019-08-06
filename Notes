@@ -1,0 +1,16 @@
+Objective:
+- Create graphing program
+- Add entities with data
+- Add relationship lines with data
+- Place entities in positions that obey rules applied
+- Freely move around entities
+
+Achieved:
+- Collision detection
+
+Currently:
+- Ability to move entities based on priority
+
+
+
+
