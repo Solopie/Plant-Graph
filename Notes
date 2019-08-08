@@ -5,11 +5,28 @@ Objective:
 - Place entities in positions that obey rules applied
 - Freely move around entities
 
+General Notes:
+- Button for creating nodes
+
+
 Achieved:
 - Collision detection
+---
+- Create Entity Button
+---
+- Edit and create entity mode
+- Button class
+---
 
 Currently:
+- Display what mode we are on (top-right)
+- Entities on top of each other based on priority
+
+Features to work on:
 - Ability to move entities based on priority
+- Having a box for data
+- Showing and hiding data and updating the entity dimensions based on the data box being shown.
+- Moving the initial position of an entity if spawned onto an entity 
 
 
 

@@ -12,12 +12,14 @@ class Entity {
   Entity(int entityId, String data, int priority) {
     this.entityId = entityId;
     this.data = data;
+    this.x = mouseX;
+    this.y = mouseY;
     this.l = 50;
     this.w = 50;
     this.priority = priority;
     this.hidden = false;
     this.allowCollision = false;
-    calculatePosition();
+    // calculatePosition();
   }
   
   boolean getAllowCollision() {
@@ -38,9 +40,10 @@ class Entity {
   // Find optimal position in accordance to rules applied
   void calculatePosition() {
     // Will determine where the entity will be automatically placed  
+    // When we implement rules this will reposition the entity
     
-    this.x = width/2;
-    this.y = height/2;
+    //this.x = width/2;
+    //this.y = height/2;
   }
   
   // When entity is colliding then move next to
