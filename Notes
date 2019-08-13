@@ -17,9 +17,11 @@ Achieved:
 - Edit and create entity mode
 - Button class
 ---
+- Display what mode we are on (top-right)
+---
+
 
 Currently:
-- Display what mode we are on (top-right)
 - Entities on top of each other based on priority
 
 Features to work on:

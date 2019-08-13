@@ -17,6 +17,13 @@ class Button {
     rect(x,y,l,w);
   }
   
+  void displayText(String text, int textSize) {
+    fill(0);
+    textAlign(CENTER);
+    textSize(textSize);
+    text(text, x, y);
+  }
+  
   
   boolean pressed() {
     // pre: This function will be called only when mouse is pressed

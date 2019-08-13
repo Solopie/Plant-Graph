@@ -30,7 +30,7 @@ void draw() {
       if (cur != cur2) {
         if (cur.collision(cur2) && cur.getAllowCollision() == false && cur2.getAllowCollision() == false) {
           // When collision occurs
-          System.out.println("Hello");
+          System.out.println(cur.entityId + " is colliding with " + cur2.entityId);
         }
       }
     }
@@ -38,15 +38,28 @@ void draw() {
 
   // Create entity button
   buttonCreateEntity.display();
-
-  // Create entity button text
-  fill(0);
-  textAlign(CENTER);
-  textSize(14);
-  text("Create entity", 50, 25);
+  buttonCreateEntity.displayText("Create entity", 14);
   
+  // Display what mode we are currently on
+  if(createEntityMode) {
+    fill(0);
+    textAlign(RIGHT);
+    textSize(14);
+    text("Create Entity Mode", width - 10, 20);
+  } else if(editMode) {
+    fill(0);
+    textAlign(RIGHT);
+    textSize(14);
+    text("Edit Mode", width - 10, 20);
+  } else {
+    fill(0);
+    textAlign(RIGHT);
+    textSize(14);
+    text("Error: No mode is active", width - 10, 50);
+    System.out.println("Error: No mode is active");  
+  }
   
-  System.out.println(entities.size());
+  //System.out.println(entities.size());
   
 }
 
@@ -72,6 +85,6 @@ void mousePressed() {
     }
   } else {
     // *** Not any mode
-    System.out.println("Error: No mode is activated");
+    System.out.println("Error: No mode is active");
   }
 }
