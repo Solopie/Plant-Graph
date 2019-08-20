@@ -1,3 +1,6 @@
+Current Branch:
+moveEntityYesSnap
+
 Objective:
 - Create graphing program
 - Add entities with data
@@ -6,8 +9,15 @@ Objective:
 - Freely move around entities
 
 General Notes:
-- Button for creating nodes
+- Moving entities (using snap. Branch: moveEntityYesSnap)
+When we click on the canvas we check if the mouse is on an entity. 
+We make a list of clicked entities and find the highest priority one.
+We set the highest prirority clicked entity to a reference (entityBeingMoved).
+We enable entityMoving mode to be true.
+The entityBeingMoved will have it's x and y updated to the mouseX and mouseY while entityBeingMode is true and will be set false once there is another click. 
 
+Issues:
+- A mouse click is not always registered by processing.
 
 Achieved:
 - Collision detection
@@ -19,10 +29,11 @@ Achieved:
 ---
 - Display what mode we are on (top-right)
 ---
-
+- Move entities (Snap entity to center)
+---
 
 Currently:
-- Entities on top of each other based on priority
+
 
 Features to work on:
 - Ability to move entities based on priority

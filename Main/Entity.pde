@@ -8,12 +8,12 @@ class Entity {
   int priority;
   boolean hidden;
   boolean allowCollision;
+  boolean moveMode;
   
   Entity(int entityId, String data, int priority) {
     this.entityId = entityId;
     this.data = data;
-    this.x = mouseX;
-    this.y = mouseY;
+    setLocation(mouseX,mouseY);
     this.l = 50;
     this.w = 50;
     this.priority = priority;
@@ -22,11 +22,21 @@ class Entity {
     // calculatePosition();
   }
   
+  void setLocation(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+  
   boolean getAllowCollision() {
     return allowCollision;  
   }
   
   void display() {
+    
+    if(moveMode) {
+      x = mouseX;
+      y = mouseY;
+    }
     rectMode(CENTER);
     fill(255);
     rect(x,y,l,w);
@@ -44,6 +54,18 @@ class Entity {
     
     //this.x = width/2;
     //this.y = height/2;
+  }
+  
+  boolean isClicked() {
+    if(mouseX >= x - l/2 && mouseX <= x + l/2 && mouseY >= y - w/2 && mouseY <= y + w/2) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  
+  void setMoveMode(boolean m) {
+    moveMode = m;  
   }
   
   // When entity is colliding then move next to
@@ -77,9 +99,18 @@ class Entity {
     } else {
       return false;  
     }
-    
   }
   
+  boolean isHigherPriority(Entity temp) {
+    if(this.priority < temp.priority) {
+      return false;
+    }
+    return true;
+  }
   
+  @Override
+  String toString() {
+    return Integer.toString(priority);
+  }
   
 }
